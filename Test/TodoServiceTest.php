@@ -1,5 +1,6 @@
 <?php
 
+use Entity\Todolist;
 use Repository\TodoRepoImplement;
 use Service\TodoServiceImpl;
 
@@ -11,9 +12,21 @@ require_once __DIR__ . "/../Service/TodolistService.php";
 function testShowTodo(): void
 {
     $todoRepo = new TodoRepoImplement();
+    $todoRepo->todolist[1] = new Todolist("Belajar PHP");
+    $todoRepo->todolist[2] = new Todolist("Belajar PHP Database");
+    $todoRepo->todolist[3] = new Todolist("Belajar PHP OOP");
     $todoService = new TodoServiceImpl($todoRepo);
 
     $todoService->showTodo();
 }
+function testAddTodo(): void
+{
+    $todoRepo = new TodoRepoImplement();
+    $todoService = new TodoServiceImpl($todoRepo);
 
-testShowTodo();
+    $todoService->addTodo("Belajar PHP");
+
+    $todoService->showTodo();
+}
+
+testAddTodo();

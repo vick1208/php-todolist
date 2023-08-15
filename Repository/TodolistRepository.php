@@ -12,10 +12,12 @@ interface TodolistRepository
 }
 
 class TodoRepoImplement implements TodolistRepository
-{ 
-    private array $todolist = [];
+{
+    public array $todolist = [];
     public function save(Todolist $todolist): void
     {
+        $num = sizeof($this->todolist) + 1;
+        $this->todolist[$num] = $todolist;
     }
     public function remove(int $num): bool
     {
