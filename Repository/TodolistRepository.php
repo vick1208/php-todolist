@@ -13,7 +13,7 @@ interface TodolistRepository
 
 class TodoRepoImplement implements TodolistRepository
 { 
-    private array $todolist;
+    private array $todolist = [];
     public function save(Todolist $todolist): void
     {
     }
@@ -23,6 +23,6 @@ class TodoRepoImplement implements TodolistRepository
     }
     public function findAllItems(): array
     {
-        return $this->todolist;;
+        return $this->todolist;
     }
 }
