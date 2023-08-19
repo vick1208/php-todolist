@@ -43,6 +43,14 @@ function testRemoveTodo(): void
 
 
     $todoService->showTodo();
+
+    $todoService->removeTodo(2);
+    $todoService->showTodo();
+
+    $todoService->removeTodo(5);
+    $todoService->showTodo();
+    $todoService->removeTodo(1);
+    $todoService->showTodo();
 }
 
-testAddTodo();
+testRemoveTodo();
