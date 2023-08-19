@@ -25,6 +25,22 @@ function testAddTodo(): void
     $todoService = new TodoServiceImpl($todoRepo);
 
     $todoService->addTodo("Belajar PHP");
+    $todoService->addTodo("Belajar PHP OOP");
+    $todoService->addTodo("Belajar PHP MySQL");
+    $todoService->addTodo("Belajar PHP PostgreSql");
+
+    $todoService->showTodo();
+}
+function testRemoveTodo(): void
+{
+    $todoRepo = new TodoRepoImplement();
+    $todoService = new TodoServiceImpl($todoRepo);
+
+    $todoService->addTodo("Belajar PHP");
+    $todoService->addTodo("Belajar PHP OOP");
+    $todoService->addTodo("Belajar PHP MySQL");
+    $todoService->addTodo("Belajar PHP PostgreSql");
+
 
     $todoService->showTodo();
 }

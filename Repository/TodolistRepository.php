@@ -20,8 +20,17 @@ class TodoRepoImplement implements TodolistRepository
         $this->todolist[$num] = $todolist;
     }
     public function remove(int $num): bool
-    {
-        return true;
+    { 
+        if ($num >sizeof($this->todolist)) {
+        return false;
+    }
+
+    for ($i = $num; $i < sizeof($this->todolist); $i++) {
+        $this->todolist[$i] = $this->todolist[$i + 1];
+    }
+    unset($this->todolist[sizeof($this->todolist)]);
+
+    return true;
     }
     public function findAllItems(): array
     {

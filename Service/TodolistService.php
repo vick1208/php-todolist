@@ -37,9 +37,15 @@ class TodoServiceImpl implements TodolistService
         $todolist = new Todolist($todo);
         $this->todolistRepo->save($todolist);
 
-        echo "To do list telah ditambahkan" . PHP_EOL;
+        echo "Data to do list telah ditambahkan" . PHP_EOL;
     }
     public function removeTodo(int $num): void
     {
+        if ($this->todolistRepo->remove($num)) {
+            echo "Data to do list telah dihapus".PHP_EOL;
+        } else {
+            echo "Data to do list gagal dihapus".PHP_EOL;
+        }
+        
     }
 }
