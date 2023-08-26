@@ -22,12 +22,12 @@ class TodoView
             echo "2. Hapus Todo" . PHP_EOL;
             echo "x. Keluar" . PHP_EOL;
 
-            $pilihan = input("Pilih");
+            $pilihan = InputHelper::input("Pilih");
 
             if ($pilihan == "1") {
-                viewAddTodo();
+                $this->addTodo();
             } else if ($pilihan == "2") {
-                viewRemoveTodo();
+                $this->removeTodo();
             } else if ($pilihan == "x") {
                 break;
             } else {
