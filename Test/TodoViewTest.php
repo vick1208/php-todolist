@@ -4,11 +4,11 @@ use Repository\TodoRepoImplement;
 use Service\TodoServiceImpl;
 use View\TodoView;
 
-include_once __DIR__.'/../Entity/Todolist.php';
-include_once __DIR__.'/../Repository/TodolistRepository.php';
-include_once __DIR__.'/../Service/TodolistService.php';
-include_once __DIR__.'/../View/TodoView.php';
-include_once __DIR__.'/../Helper/InputHelper.php';
+include_once __DIR__ . '/../Entity/Todolist.php';
+include_once __DIR__ . '/../Repository/TodolistRepository.php';
+include_once __DIR__ . '/../Service/TodolistService.php';
+include_once __DIR__ . '/../View/TodoView.php';
+include_once __DIR__ . '/../Helper/InputHelper.php';
 
 
 function testViewShowTodolist(): void
@@ -23,7 +23,6 @@ function testViewShowTodolist(): void
     $todolistService->addTodo("Belajar PHP Database");
 
     $todolistView->showTodo();
-
 }
 
 function testViewAddTodolist(): void
@@ -46,7 +45,6 @@ function testViewAddTodolist(): void
     $todolistView->addTodo();
 
     $todolistService->showTodo();
-
 }
 
 function testViewRemoveTodolist(): void
@@ -69,7 +67,6 @@ function testViewRemoveTodolist(): void
     $todolistView->removeTodo();
 
     $todolistService->showTodo();
-
 }
 
 testViewRemoveTodolist();
